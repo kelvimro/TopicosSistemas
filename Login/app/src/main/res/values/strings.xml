@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="login">Conetaré</string>
+    <string name="cadastrar">Cadastraré</string>
+    <string name="errosenha">Usuaré ou senhé erradê</string>
+    <string name="usuarios">Usuarés </string>
+    <string name="cadastradook">Usuaré cadastré</string>
+    <string name="logout">Desconectaré</string>
+    <string name="bemvindo">Bemé Vindé</string>
+    <string name="limpar">Limparé</string>
+</resources>

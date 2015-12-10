@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Login</string>
+    <string name="login">Logar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="errosenha">Usuario ou senha invalidos.</string>
+    <string name="usuarios">Cadatrados </string>
+    <string name="cadastradook">Usuario cadastrado.</string>
+    <string name="logout">Deslogar</string>
+    <string name="bemvindo">Bem vindo</string>
+    <string name="limpar">Limpar</string>
+</resources>

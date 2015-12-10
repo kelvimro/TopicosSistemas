@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Login</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="cadastrar">Contratar</string>
+    <string name="errosenha">Nombre de uruario o contraseña incorrectos</string>
+    <string name="usuarios">Refistrado</string>
+    <string name="cadastradook">Usuario registrado</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="bemvindo">Bienvenida</string>
+    <string name="limpar">Claro</string>
+</resources>
