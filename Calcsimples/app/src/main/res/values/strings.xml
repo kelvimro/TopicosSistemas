@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calcsimples</string>
+    <string name="btnSoma">SOMA</string>
+    <string name="btnMenos">MENOS</string>
+    <string name="btnMultiplica">MULTIPLICA</string>
+    <string name="btnDivide">DIVIDE</string>
+</resources>
