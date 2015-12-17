@@ -1,9 +1,11 @@
 package com.example.yo.rest;
 
+import java.io.Serializable;
+
 /**
  * Created by yo on 26/11/2015.
  */
-public class Lanche {
+public class Lanche implements Serializable{
     private String nome;
     private String ingredientes;
     private double valor;

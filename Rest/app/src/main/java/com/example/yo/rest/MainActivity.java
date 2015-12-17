@@ -1,6 +1,7 @@
 package com.example.yo.rest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     List<Map<String, String>> listlanches = new ArrayList<Map<String, String>>();
+    static Lanche[] vetlanches = new Lanche[10];
 
 
     @Override
@@ -49,34 +51,45 @@ public class MainActivity extends AppCompatActivity {
         gerarLanches();
 
         ListView lv = (ListView) findViewById(R.id.lvlanches);
-        SimpleAdapter simpleadp = new SimpleAdapter(this, listlanches, android.R.layout.simple_list_item_1, new String[]{"lanche"}, new int[]{android.R.id.text1});
+
+        ArrayAdapter<Lanche> simpleadp = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, vetlanches);
+
         lv.setAdapter(simpleadp);
 
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            public void onItemClick(AdapterView<?> parentAdapter, View view, int position, long id) {
-                TextView clickedView = (TextView) view;
-
-                Toast.makeText(MainActivity.this, "Item with id ["+id+"] - Position [" + position + "] - Lanche[" + clickedView.getText() + "]", Toast.LENGTH_SHORT).show();
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                TextView clickedView = (TextView) view;
+//                Toast.makeText(MainActivity.this, "Item with id ["+id+"] - Position [" + position + "] - Lanche[" + clickedView.getText() + "]", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getBaseContext(), LancheActivity.class);
+                intent.putExtra("lanche", vetlanches[position]);
+                startActivity(intent);
             }
 
         });
     }
 
         private void gerarLanches() {
-        listlanches.add(criarlanche("lanche", "X-Salada"));
-        listlanches.add(criarlanche("lanche", "X-Bacon"));
-        listlanches.add(criarlanche("lanche", "X-Calabresa"));
-        listlanches.add(criarlanche("lanche", "X-Picanha"));
+            vetlanches[0] = new Lanche("X-Salada", "Hambuger, queijo, salada", 9.90);
+            vetlanches[1] = new Lanche("X-Bacon", "Hambuger, queijo, Bacon", 11.90);
+            vetlanches[2] = new Lanche("X-Calabresa", "Calabresa, queijo, salada", 12.90);
+            vetlanches[3] = new Lanche("X-Egg", "Hambuger, queijo, Ovo", 13.90);
+            vetlanches[4] = new Lanche("X-Picanha", "Picanha, queijo, salada", 15.90);
+            vetlanches[5] = new Lanche("X-Mieniro", "Hambuger, queijo branco, Ovo", 11.21);
+            vetlanches[6] = new Lanche("Dog", "Salsicha, Batata palha", 5.11);
+            vetlanches[7] = new Lanche("Dogão", "2 Salsichas, queijo, batata palha", 6.90);
+            vetlanches[8] = new Lanche("X-Burger", "Hambuger, queijo", 6.90);
+            vetlanches[9] = new Lanche("X-Filé", "Filé mignon, queijo, salada", 18.90);
 
     }
 
 
-    private HashMap<String, String> criarlanche(String n, String i) {
-        HashMap<String, String> lanche = new HashMap<String, String>();
-        lanche.put(n, i);
-        return lanche;
-    }
+//    private HashMap<String, String> criarlanche(String n, String i) {
+//        HashMap<String, String> lanche = new HashMap<String, String>();
+//        lanche.put(n, i);
+//        return lanche;
+//    }
 
 
     @Override
